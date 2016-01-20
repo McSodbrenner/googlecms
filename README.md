@@ -22,7 +22,7 @@ $spreadsheet_id = '1LNvJWag9RNHiF6dtKSFVgYhbK_y7jFa4C3UTI-RUiO0';
 $request_block_size = 10;
 
 include('src/GoogleCMS.php');
-$cms = new GoogleCMS($spreadsheet_id, $request_block_size);
+$cms = new McSodbrenner\GoogleCMS\GoogleCMS($spreadsheet_id, $request_block_size);
 
 
 // Now we get the data. It is possible to build keys like "content1.subkey1" or "content1|subkey1" that are transformed into an array.

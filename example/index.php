@@ -8,7 +8,7 @@ $id = '1LNvJWag9RNHiF6dtKSFVgYhbK_y7jFa4C3UTI-RUiO0';
 $start = microtime(true);
 
 include('../src/GoogleCMS.php');
-$cms = new GoogleCMS($id, 20);
+$cms = new McSodbrenner\GoogleCMS\GoogleCMS($id, 20);
 $data = $cms->getData('.');
 
 print_r($data);
