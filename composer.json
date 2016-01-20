@@ -10,8 +10,8 @@
     ],
     "require": {
         "ext-curl": "*"
-	},
-	"autoload": {
+    },
+    "autoload": {
         "psr-4": { "McSodbrenner\\GoogleCMS\\": "src/" }
     }
 }
