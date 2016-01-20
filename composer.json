@@ -1,0 +1,12 @@
+{
+    "name": "mcsodbrenner/googlecms",
+    "description": "A PHP class that uses Google Spreadsheets as CMS.",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Christoph Erdmann",
+            "email": "googlecms@cerdmann.com"
+        }
+    ],
+    "require": {}
+}
