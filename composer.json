@@ -8,5 +8,10 @@
             "email": "googlecms@cerdmann.com"
         }
     ],
-    "require": {}
+    "require": {},
+	"autoload": {
+        "psr-4": {
+            "McSodbrenner\\GoogleCMS\\": "src"
+        }
+    }
 }

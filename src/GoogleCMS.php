@@ -1,5 +1,7 @@
 <?php
 
+namespace McSodbrenner\GoogleCMS;
+
 class GoogleCMS {
 	protected $_id;
 	protected $_request_block_size;
