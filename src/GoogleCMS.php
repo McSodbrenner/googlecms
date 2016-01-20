@@ -10,8 +10,6 @@ class GoogleCMS {
 	}
 
 	public function getData($array_divider = '.') {
-		$data			= [];
-
 		// get the data for all sheets
 		$data_raw = $this->_getSheetData();
 
@@ -24,6 +22,7 @@ class GoogleCMS {
 
 		// the final step is to explode the dividers in the array keys
 		$data = $this->_explodeSyntax($data, $array_divider);
+
 		return $data;
 	}
 
@@ -97,10 +96,10 @@ class GoogleCMS {
 						// if the key does already exist transform to array
 						if (isset($data[$sheet][$header][$key])) {
 							if (!is_array($data[$sheet][$header][$key])) {
-								$data[$sheet][$header][$key] = array('item0' => $data[$sheet][$header][$key]);
+								$data[$sheet][$header][$key] = array(0 => $data[$sheet][$header][$key]);
 							}
 							$length = count($data[$sheet][$header][$key]);
-							$data[$sheet][$header][$key]['item' . $length] = $row[$col];
+							$data[$sheet][$header][$key][$length] = $row[$col];
 
 						// else we have a simple key value pair
 						} else {
