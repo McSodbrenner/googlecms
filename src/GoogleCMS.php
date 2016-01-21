@@ -44,7 +44,7 @@ class GoogleCMS {
 
 			foreach ($temporary_results as $result) {
 				// if we do not get json back anymore skip retrieving more sheets
-				if (!isset($result{0}) || $result{0} !== '{') break 2;
+				if ($result{0} !== '{') break 2;
 				$results[] = $result;
 			}
 
@@ -135,6 +135,7 @@ class GoogleCMS {
 			curl_setopt($curly[$id], CURLOPT_HEADER,         0);
 			curl_setopt($curly[$id], CURLOPT_RETURNTRANSFER, 1);
 			curl_setopt($curly[$id], CURLOPT_TIMEOUT, 10);
+			curl_setopt($curly[$id], CURLOPT_SSL_VERIFYPEER, false);
 			curl_multi_add_handle($mh, $curly[$id]);
 		}
 
@@ -149,6 +150,7 @@ class GoogleCMS {
 		foreach($curly as $id => $c) {
 			$result[$id] = curl_multi_getcontent($c);
 			curl_multi_remove_handle($mh, $c);
+			// to get the error code: print_r(curl_multi_info_read($mh));
 		}
 
 		// all done
