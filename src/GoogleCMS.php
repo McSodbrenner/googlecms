@@ -44,7 +44,7 @@ class GoogleCMS {
 
 			foreach ($temporary_results as $result) {
 				// if we do not get json back anymore skip retrieving more sheets
-				if ($result{0} !== '{') break 2;
+				if (!isset($result{0}) || $result{0} !== '{') break 2;
 				$results[] = $result;
 			}
 
